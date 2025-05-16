@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group 2 | Innovative Minds</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f0f4f8, #dfe9f3);
+      color: #333;
+    }
+
+    header {
+      backdrop-filter: blur(10px);
+      background-color: rgba(26, 41, 128, 0.8);
+      padding: 20px 0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ffde59;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffde59;
+      text-shadow: 0 0 6px #ffde59;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">Group 2 ✨</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+</body>
+</html>
