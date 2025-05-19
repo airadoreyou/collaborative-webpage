@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group 2 | Innovative Minds</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f0f4f8, #dfe9f3);
+      color: #333;
+    }
+
+    header {
+      backdrop-filter: blur(10px);
+      background-color: rgba(26, 41, 128, 0.8);
+      padding: 20px 0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffde59;
+      text-shadow: 0 0 6px #ffde59;
+    }
+
+    section {
+      display: none;
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2, h4 {
+      color: rgba(26, 41, 128, 0.8);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">Group 2 ✨</div>
+      <nav>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('team')">Team</a>
+        <a onclick="showSection('contact')">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="active">
+    <h4>PROJECT BY:</h4>
+    <h4>GROUP 2</h4>
+    <p>
+      This webpage introduces the basics of creating Arduino circuit projects, guiding users through the essential components, tools, and steps needed to get started. It provides a clear overview of how Arduino boards work, how to connect electronic components like LEDs, resistors, and sensors, and how to upload code to bring the circuits to life. Whether you're a beginner or looking to expand your knowledge, the page offers helpful diagrams, explanations, and sample projects to make learning hands-on and engaging.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Our Arduino Robot Car Project</h2>
+    <img src="D:\arduinobot.png" alt="Arduino Robot Car">
+    <p>
+      This 4-wheeled robot uses an Arduino microcontroller and ultrasonic sensor for obstacle avoidance. It's a hands-on example of how hardware and code come together to create autonomous movement.
+    </p>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team">
+    <h2>Our Team</h2>
+    <p>
+      Meet the innovative minds behind the project — a passionate group of students exploring technology through hands-on learning.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      Got questions? Reach out to us via email or through our social platforms. We're excited to hear from you!
+    </p>
+  </section>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
