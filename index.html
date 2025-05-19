@@ -54,8 +54,18 @@
       font-weight: 600;
       font-size: 1.05rem;
       position: relative;
-      cursor: pointer;
       transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ffde59;
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
@@ -63,45 +73,15 @@
       text-shadow: 0 0 6px #ffde59;
     }
 
-    section {
-      display: none;
-      padding: 4rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    section.active {
-      display: block;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    h2, h4 {
-      color: rgba(26, 41, 128, 0.8);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    img {
+    nav a:hover::after {
       width: 100%;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
     }
   </style>
 </head>
@@ -111,56 +91,55 @@
     <div class="nav-container">
       <div class="logo">Group 2 ✨</div>
       <nav>
-        <a onclick="showSection('about')">About</a>
-        <a onclick="showSection('projects')">Projects</a>
-        <a onclick="showSection('team')">Team</a>
-        <a onclick="showSection('contact')">Contact</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
-
-  <!-- About Section -->
-  <section id="about" class="active">
-    <h4>PROJECT BY:</h4>
-    <h4>GROUP 2</h4>
-    <p>
-      This webpage introduces the basics of creating Arduino circuit projects, guiding users through the essential components, tools, and steps needed to get started. It provides a clear overview of how Arduino boards work, how to connect electronic components like LEDs, resistors, and sensors, and how to upload code to bring the circuits to life. Whether you're a beginner or looking to expand your knowledge, the page offers helpful diagrams, explanations, and sample projects to make learning hands-on and engaging.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Our Arduino Robot Car Project</h2>
-    <img src="D:\arduinobot.png" alt="Arduino Robot Car">
-    <p>
-      This 4-wheeled robot uses an Arduino microcontroller and ultrasonic sensor for obstacle avoidance. It's a hands-on example of how hardware and code come together to create autonomous movement.
-    </p>
-  </section>
-
-  <!-- Team Section -->
-  <section id="team">
-    <h2>Our Team</h2>
-    <p>
-      Meet the innovative minds behind the project — a passionate group of students exploring technology through hands-on learning.
-    </p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>
-      Got questions? Reach out to us via email or through our social platforms. We're excited to hear from you!
-    </p>
-  </section>
-
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
+<style>
+    .content-wrapper {
+        font-family: 'Segoe UI', sans-serif;
+        max-width: 800px;
+        margin-left: 4rem;    /* increased margin space from left */
+        margin-right: auto;   /* align left */
+        margin-top: 10rem;    /* lowered position */
+        padding-left: 2rem;
+        padding-right: 2rem;
+        /* removed transform */
     }
-  </script>
+
+    .heading-container .heading {
+        font-weight: bold;
+        font-size: 2.5rem;  /* increased font size */
+        color: rgba(26, 41, 128, 0.8);
+        margin: 0.2em 0;
+        text-align: left;
+    }
+
+    .subheading-container .subheading {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: hsl(0, 25%, 2%);
+        margin-top: 1em;
+        text-align: left;
+        max-width: 700px;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="heading-container">
+        <h4 class="heading">PROJECT BY:</h4>
+        <h4 class="heading">GROUP 2</h4>
+    </div>
+
+    <div class="subheading-container">
+        <p class="subheading">
+           This webpage introduces the basics of creating Arduino circuit projects, guiding users through the essential components, tools, and steps needed to get started. It provides a clear overview of how Arduino boards work, how to connect electronic components like LEDs, resistors, and sensors, and how to upload code to bring the circuits to life. Whether you're a beginner or looking to expand your knowledge, the page offers helpful diagrams, explanations, and sample projects to make learning hands-on and engaging.
+        </p>
+    </div>
+</div>
+
 </body>
 </html>
